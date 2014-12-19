@@ -1,0 +1,72 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/hover.css">
+	<script src="js/angular.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/controller.js"></script>
+	<!-- firebase.js --->
+	<!-- angularfire last -->
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+	<title>Tic | Tac | Toe</title>
+</head>
+
+
+
+
+<body ng-controller="GameController as gameCtrl">
+	<div class="container">
+		<div class="header">
+			<h6><span id="ticColor">tic</span> | <span id="tacColor">tac</span> | <span id="toeColor">toe</span></h6>
+		</div>
+		<div class="leftPanel">
+			<p>score:</p>
+			<input type = "button" class = "btnResetScore" value = "reset score">
+			<div class="blueCounterBox">
+				<p>X</p><!-- ADD WIN COUNT -->
+			</div>
+			<div class="ojCounterBox">
+				<p>O</p><!-- ADD WIN COUNT -->
+			</div>
+		</div>
+
+		<div class="board">
+			<div class="boxDefault shrink" ng-repeat="box in gameCtrl.gameBoard track by $index" ng-class="{blueBox: box.setBlue, ojBox: box.setOj}" ng-click="gameCtrl.clickBox($index)">
+			</div>
+		</div>
+
+
+
+
+
+
+
+		<div id="gameEndContainer" ng-show="gameCtrl.blueWin">
+			<div id="gameTextBox">
+				<p class="winMessage"><span style="color:#FF9900">Blue</span> Wins!</p>
+				<input type="button" class="btnEndGame hover rotate" value="-rematch-" ng-click="gameCtrl.restartButton()">
+			</div>
+		</div>
+
+
+		<div id="gameEndContainer" ng-show="gameCtrl.ojWin">
+			<div id="gameTextBox">
+				<p class="winMessage"><span style="color:#3399FF">Orange</span> Wins!</p>
+				<input type="button" class="btnEndGame hover rotate" value="-rematch-" ng-click="gameCtrl.restartButton()">
+			</div>
+		</div>
+	
+
+
+
+
+
+
+	</div>
+</body>
+
+</html>
+
+

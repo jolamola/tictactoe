@@ -1,0 +1,272 @@
+/*===============================
+Colors:
+#6E7587 - Grey
+#FF9900 - Orange
+#3399FF - Light Blue
+#020731 - Dark Blue
+#c9b597 - Lighter Brown
+#AE956D - Light Brown
+#806641 - Dark Brown (unused)
+#6E7587 - Light Green
+#55ebde - Dark Green
+===============================*/
+
+
+
+/*===============================
+Div header and tic tac toe text box
+===============================*/
+.header{
+	position:relative;
+	top: 20px;
+	width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+h6{
+	color: #6E7587;
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 500;
+	font-size: 40px;
+	margin: 0px;
+	border: 4px solid #6E7587;
+	width: 240px;
+	padding: 5px;
+	text-align: center;
+	position: relative;
+	left: 0px;
+}
+
+#ticColor,
+#toeColor{
+	color: #3399FF;
+}
+
+#tacColor{
+	color: #FF9900;
+	font-weight: 600;
+}
+
+/*===============================
+Main body & container for game board
+and left panel.
+===============================*/
+body{
+	background-color: #020731;
+	background-position: center;
+	text-align: center;	
+	vertical-align: middle;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.container{
+	width: 1200px;
+	background-color:#020731;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	top:0px;
+}
+
+.board{
+	width: 537px;
+	height: 537px;
+	margin-left: auto;
+	margin-right: auto;
+	position:relative;
+	top: 80px;
+}
+
+.leftPanel{
+	color:#AE956D;
+	background-color:transparent;
+	font-size: 20px;
+	margin: 0px;
+	width: 256px;
+	height: 300px;
+	position: relative;
+	top: 35px;
+	left: 0px;
+	float: left;
+}
+
+.leftPanel p{
+	color: #AE956D;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 30px;
+	font-weight: 400;
+	text-align: left;
+	margin: 0px;
+	margin-left: 5px;
+}
+
+
+/*================================================
+End of game message box
+=================================================*/
+#gameEndContainer{
+	background-color: transparent;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	position: absolute;
+	top: 124px;
+	height: 540px;
+}
+#gameTextBox{
+	background-color: white;
+	opacity: .9;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	position: absolute;
+	top: 125px;
+	height: 300px;	
+}
+.winMessage{
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 160px;
+	font-weight: 800;
+	color: #AE956D;
+	text-align: center;
+	top: 0px;
+	left: 0px;
+	position: relative;
+	margin: 0px;
+}
+
+.ojWinMessage{
+	position: relative;
+	top: 10px;
+	left: 10px;
+}
+
+/*========================
+Buttons
+=========================*/
+.btnEndGame {
+  border-radius: 25px;
+  border: 0px;
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  font-size: 50px;
+  background: #55ebde;
+  padding: 10px 20px;
+  text-decoration: none;
+  position: relative;
+  margin-left: auto;
+  margin-right:auto;
+  top:15px;
+}
+
+.btnEndGame:hover {
+  background: #83f7eb;
+  text-decoration: none;
+}
+
+.btnEndGame:focus {
+	outline:0;
+}
+
+.btnResetScore{
+	border-radius: 20px;
+	border: 0px;
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 600;
+	color: #020731;
+	font-size: 12px;
+	background: #AE956D;
+	padding: 5px 10px;
+	position: absolute;
+	top:10px;
+	right:34px;
+}
+
+.btnResetScore:hover {
+  background: #c9b597;
+  text-decoration: none;
+}
+
+.btnResetScore:focus {
+	outline:0;
+}
+
+/*========================
+Boxes for game
+=========================*/
+.boxDefault{
+	width: 175px;
+	height: 175px;
+	background-color: #6E7587;
+	float: left;
+	border-radius: 100px;
+	margin: 2px;
+}
+
+/*==== player1 | blue box ====*/
+.blueBox{
+	width: 175px;
+	height: 175px;
+	background-color: #3399FF;
+	float: left;
+	border-radius: 100px;
+	margin: 2px;
+}
+
+/*==== player2 | oj box ====*/
+.ojBox{
+	width: 175px;
+	height: 175px;
+	background-color: #FF9900;
+	float: left;
+	border-radius: 100px;
+	margin: 2px;
+}
+
+/*========================
+Score counter
+=========================*/
+
+.blueCounterBox {
+	width: 100px;
+	height: 100px;
+	background-color: #3399FF;
+	border-radius: 50px;
+	margin-top: 10px;
+	margin-left: 20px;
+	float: left;
+}
+
+.ojCounterBox {
+	width: 100px;
+	height: 100px;
+	background-color: #FF9900;
+	border-radius: 50px;
+	margin-top: 10px;
+	margin-right: 20px;
+	float: right;
+	color: #020731;
+}
+
+.blueCounterBox p {
+	color: #020731;
+	font-size: 40px;
+	text-align: center;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	top: 26px;
+}
+
+.ojCounterBox p {
+	color: #020731;
+	font-size: 40px;
+	text-align: center;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	top: 26px;
+}

@@ -1,0 +1,407 @@
+=== old syntax ===
+
+myAngularApp = angular.module('myApp', []);
+
+myAngularApp.controller("MyController", ['$scope', function($scope){
+    
+}]);
+
+
+====== new syntax ======
+
+angular
+	.module("MyController",[])
+	.controller("MyController", MyController);
+
+function MyController=(){}
+
+========================
+
+
+
+boxes with dividers. use with clear boxes and colored dividers.
+
+ <div class="container">
+			<div class="boxOne"></div>
+			<div class="hDivider"></div>
+			<div class="vDivider"></div>
+
+			<div class="boxTwo"></div>
+			<div class="vDivider"></div>
+
+			<div class="boxThree"></div>
+			
+			<div class="boxFour"></div>
+			<div class="hDivider"></div>
+
+			<div class="boxFive"></div>
+			
+			<div class="boxSix"></div>
+			
+			<div class="boxSeven"></div>
+			
+			<div class="boxEight"></div>
+			
+			<div class="boxNine"></div>
+	</div> 
+
+=================================
+
+table style format
+
+				<table style="width:600px, height:600px">
+			<tr>
+				<td class="boxOne"></td>
+				<td class="boxTwo"></td>
+				<td class="boxThree"></td>
+			</tr><tr>
+				<td class="boxFour"></td>
+				<td class="boxFive"></td>
+				<td class="boxSix"></td>
+			</tr><tr>
+				<td class="boxSeven"></td>
+				<td class="boxEight"></td>
+				<td class="boxNine"></td>
+			</tr> -->
+
+=================================
+
+			<div 
+				class="boxTwo"
+				ng-class="{hoverAction:hover}"
+				ng-mouseenter="hover = true"
+				ng-mouseleave="hover = false">
+
+			</div>
+			<div class="boxThree"			
+				ng-class="{hoverAction:hover}"
+				ng-mouseenter="hover = true"
+				ng-mouseleave="hover = false">
+			</div>
+			<div class="boxFour"
+				ng-class="{hoverAction:hover}"
+				ng-mouseenter="hover = true"
+				ng-mouseleave="hover = false">
+			</div>
+			<div class="boxFive"
+				ng-class="{hoverAction:hover}"
+				ng-mouseenter="hover = true"
+				ng-mouseleave="hover = false">
+			</div>
+			<div class="boxSix"
+				ng-class="{hoverAction:hover}"
+				ng-mouseenter="hover = true"
+				ng-mouseleave="hover = false">
+			</div>
+			<div class="boxSeven"
+				ng-class="{hoverAction:hover}"
+				ng-mouseenter="hover = true"
+				ng-mouseleave="hover = false">
+			</div>
+			<div class="boxEight"				
+				ng-class="{hoverAction:hover}"
+				ng-mouseenter="hover = true"
+				ng-mouseleave="hover = false">
+			</div>
+			<div class="boxNine"
+				ng-class="{hoverAction:hover}"
+				ng-mouseenter="hover = true"
+				ng-mouseleave="hover = false">
+			</div>
+		</div>
+
+
+
+<div
+					class="boxOne" 
+					ng-class="{red:hover}"
+					ng-mouseenter="hover = true"
+	    			ng-mouseleave="hover = false">
+	    		</div>
+				<div class="boxTwo"></div>
+				<div class="boxThree"></div>
+				<div class="boxFour"></div>
+				<div class="boxFive"></div>
+				<div class="boxSix"></div>
+				<div class="boxSeven"></div>
+				<div class="boxEight"></div>
+				<div class="boxNine"></div>
+
+
+				=====
+
+				[
+	{
+		type: "playerOne",
+		image: "../images/x.png"
+	},
+	{
+		type: "playerTwo",
+		image: "../images/o.png"
+	}
+		]
+
+
+
+====== css =======
+
+.boxTwo{
+	width: 200px;
+	height: 200px;
+	background-color: green;
+	float: left;
+	border-radius: 30px;
+	margin-right: 5px;
+	hover: yellow;
+}
+.boxThree{
+	width: 200px;
+	height: 200px;
+	background-color: green;
+	float: left;
+	border-radius: 30px;
+	margin-bottom: 5px;
+}
+.boxFour{
+	width: 200px;
+	height: 200px;
+	background-color: green;
+	float: left;
+	border-radius: 30px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+.boxFive{
+	width: 200px;
+	height: 200px;
+	background-color: green;
+	float: left;
+	border-radius: 30px;
+	margin-right:5px;
+	margin-bottom:5px;
+}
+.boxSix{
+	width: 200px;
+	height: 200px;
+	background-color: green;
+	float: left;
+	border-radius: 30px;
+	margin-bottom:5px;
+}
+.boxSeven{
+	width: 200px;
+	height: 200px;
+	background-color: green;
+	float: left;
+	border-radius: 30px;
+	margin-right: 5px;
+}
+.boxEight{
+	width: 200px;
+	height: 200px;
+	background-color: green;
+	float: left;
+	border-radius: 30px;
+	margin-right:5px;
+}
+.boxNine{
+	width: 200px;
+	height: 200px;
+	background-color: green;
+	float: left;
+	border-radius: 30px;
+}
+
+.divider{
+	width: 2px;
+	height: 200px;
+	background-color: green;
+	float: left;
+	border-radius: 30px;
+}
+
+.hoverAction{
+	background-color:peachpuff;
+}
+
+/*div.boxOne:hover{
+	background-color:transparent;
+	
+}*/
+
+
+	// $scope.boxThree=function(){
+	// 	if(activePlayer) {
+	// 		$scope.blueThree = true;
+	// 		playerX.push('3');
+	// 		// console.log(playerX[0]);
+	// 		activePlayer = false;
+
+	// 	} else {
+	// 		$scope.ojThree = true;
+	// 		playerO.push('3');
+	// 		// console.log(playerO[0]);
+	// 	}
+	// 		console.log(playerX);
+	// 		console.log(playerO);
+	// };
+
+
+
+				<div class="gameBoard">
+				<div class="boxDefault shrink" ng-class="{blueBox: blueOne, ojBox: ojOne}" ng-click="boxOne()"></div>
+				<div class="boxDefault shrink" ng-class="{blueBox: blueTwo, ojBox: ojTwo}" ng-click="boxTwo()"></div>
+				<div class="boxDefault shrink" ng-class="{blueBox: blueThree, ojBox: ojThree}" ng-click="boxThree()"></div>
+				<div class="boxDefault shrink four"></div>
+				<div class="boxDefault shrink five"></div>
+				<div class="boxDefault shrink six"></div>
+				<div class="boxDefault shrink seven"></div>
+				<div class="boxDefault shrink eight"></div>
+				<div class="boxDefault shrink nine"></div>
+			</div>
+
+
+==== last working 2:02 =====
+
+	$scope.clickBox=function(box){
+
+		if(activePlayer) {
+			if (box.num == playerX || box.num == playerO){
+				alert("already selected");
+				console.log("already selected");
+					
+			} else if (box.num == playerX && box.num == playerO){
+				alert("already selected");
+				console.log("already selected");	
+								
+			} else {
+				playerX.push(box.num); 
+				box.blue= true;
+				box.oj=false;
+				activePlayer=false;
+				console.log(box.num + " was added to PlayerX");
+			}
+
+			console.log("playerBLUE has " + playerX + " in array");
+				
+		} else {
+			if(box.num == playerX || box.num == playerO){
+				alert("already selected");
+				console.log("already selected");
+				
+			} else {
+				playerO.push(box.num);
+				box.oj=true;
+				activePlayer=true;
+				console.log(box.num + " was added to PlayerO");
+			}
+			console.log("playerOJ has " + playerO + " in array");
+		}
+
+	};
+
+==============
+
+if ($.inArray("Music", a_related_genres_leon) > -1) {
+    console.log('Music');
+}
+if ($.inArray("TV", a_related_genres_leon) > -1) {
+    console.log('TV');
+}
+if ($.inArray("Comedy", a_related_genres_leon) > -1) {
+    console.log('Comedy');
+
+
+The indexOf() method searches the array for the specified item, and returns its position.
+
+The search will start at the specified position, or at the beginning if no start position is specified, and end the search at the end of the array.
+
+Returns -1 if the item is not found.
+
+======
+
+		// duplicate values trigger sometimes
+		// color not changing on click
+		// track by $index instead of num: 1 stuff. in lieu of box as well??
+// gamebox[box]
+		if(activePlayer) {
+			// check if playerX has a repeat choice - do i need for in loop?
+			if ((box.num == playerX || box.num == playerO) || (box.num == playerX && box.num == playerO)){
+				alert("already selected");
+				console.log("already selected"); 			
+
+			} else {
+				playerX.push(box.num); 
+				box.blue= true;
+				box.oj=false;
+				activePlayer=false;
+				console.log(box.num + " was added to PlayerX");
+			}
+
+			console.log("playerBLUE has " + playerX + " in array");
+				
+
+
+
+
+
+
+
+
+
+
+
+		} else {
+			if(box.num == playerX || box.num == playerO){ // check for repeat here
+				alert("already selected");
+				console.log("already selected");
+				
+			} else {
+				playerO.push(box.num);
+				box.oj=true;
+				activePlayer=true;
+				console.log(box.num + " was added to PlayerO");
+			}
+			console.log("playerOJ has " + playerO + " in array");
+		}
+
+	};
+	
+
+
+<p class="ojWinMessage" ng-show="gameCtrl.ojWin">OJ WINS</p>
+}]);
+
+
+		====== css dump======
+
+
+/*.userName{
+	color: #AE956D;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 20px;
+	text-align: right;
+	position: relative;
+	width: 1200px;
+	top: -40px;
+	right: 168px;
+}*/
+
+
+.box {
+  width: 150px;
+  height: 150px;
+  background: red;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.box:hover {
+  background-color: green;
+  cursor: pointer;
+  -webkit-transition: background-color 2s ease-out;
+  -moz-transition: background-color 2s ease-out;
+  -o-transition: background-color 2s ease-out;
+  transition: background-color 2s ease-out;
+}
