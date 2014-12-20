@@ -13,9 +13,6 @@
 	<title>Tic | Tac | Toe</title>
 </head>
 
-
-
-
 <body ng-controller="GameController as gameCtrl">
 	<div class="container">
 		<div class="header">
@@ -23,12 +20,12 @@
 		</div>
 		<div class="leftPanel">
 			<p>score:</p>
-			<input type = "button" class = "btnResetScore" value = "reset score">
+			<input type = "button" class = "btnResetScore" value = "reset score" ng-click="gameCtrl.buttonResetScore()">
 			<div class="blueCounterBox">
-				<p>X</p><!-- ADD WIN COUNT -->
+				<p>{{gameCtrl.blueWinCounter}}</p>
 			</div>
 			<div class="ojCounterBox">
-				<p>O</p><!-- ADD WIN COUNT -->
+				<p>{{gameCtrl.ojWinCounter}}</p>
 			</div>
 		</div>
 
@@ -58,7 +55,12 @@
 			</div>
 		</div>
 	
-
+		<div id="gameEndContainer" ng-show="gameCtrl.tie">
+			<div id="gameTextBox">
+				<p class="winMessage">Draw Game!</p>
+				<input type="button" class="btnEndGame hover rotate" value="-rematch-" ng-click="gameCtrl.restartButton()">
+			</div>
+		</div>
 
 
 

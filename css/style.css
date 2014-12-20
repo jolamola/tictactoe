@@ -11,7 +11,9 @@ Colors:
 #55ebde - Dark Green
 ===============================*/
 
-
+h1{
+	color:white;
+}
 
 /*===============================
 Div header and tic tac toe text box
@@ -143,6 +145,7 @@ End of game message box
 	top: 10px;
 	left: 10px;
 }
+
 
 /*========================
 Buttons

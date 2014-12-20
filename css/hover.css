@@ -1,27 +1,8 @@
-/* Grow */
-.grow {
-  display: inline-block;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-}
-.grow:hover, .grow:focus, .grow:active {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
 /* Shrink */
 .shrink {
   display: inline-block;
-  -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  -webkit-transition-property: transform;
   transition-property: transform;
-  -webkit-transform: translateZ(0);
   transform: translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 }
@@ -29,6 +10,8 @@
   -webkit-transform: scale(0.9);
   transform: scale(0.9);
 }
+
+
 
 /* Rotate */
 .rotate {
@@ -44,12 +27,4 @@
 .rotate:hover, .rotate:focus, .rotate:active {
   -webkit-transform: rotate(4deg);
   transform: rotate(4deg);
-}
-
-/* Color Transition Blue */
-
-.colorToBlue{
-  background-color: #3399FF;
-  cursor: pointer;
-  transition: background-color 2s ease-out;
 }

@@ -4,21 +4,29 @@ angular
 
 	function GameController(){
 		var gameCtrl = this;
-		var stopsClickFunc = "";
-		var firstClick = "x";
-		
+		gameCtrl.stopsClickFunc = false;
+		gameCtrl.firstClick = "x";
+		gameCtrl.drawCounter = 0;
+		gameCtrl.blueWinCounter = 0;
+		gameCtrl.ojWinCounter = 0;
 		gameCtrl.clickBox = clickBox;
 		gameCtrl.restartButton = restartButton;
+		gameCtrl.setNewGameboard = setNewGameboard;
+		gameCtrl.buttonResetScore = buttonResetScore;
 
-		gameCtrl.gameBoard = [
-			{value:"empty",setBlue:false,setOj:false}, {value:"empty",setBlue:false, setOj:false}, {value:"empty",setBlue:false,setOj:false}, 
-			{value:"empty",setBlue:false,setOj:false}, {value:"empty",  setBlue: false, setOj: false}, {value:"empty",  setBlue: false, setOj: false}, 
-			{value:"empty",  setBlue: false, setOj: false}, {value:"empty",  setBlue: false, setOj: false}, {value:"empty",  setBlue: false, setOj: false}
-			];
+		gameCtrl.setNewGameboard();
 		
+		function setNewGameboard() {
+			gameCtrl.gameBoard = [
+				{value:"empty",setBlue:false,setOj:false}, {value:"empty",setBlue:false, setOj:false}, {value:"empty",setBlue:false,setOj:false}, 
+				{value:"empty",setBlue:false,setOj:false}, {value:"empty",  setBlue: false, setOj: false}, {value:"empty",  setBlue: false, setOj: false}, 
+				{value:"empty",  setBlue: false, setOj: false}, {value:"empty",  setBlue: false, setOj: false}, {value:"empty",  setBlue: false, setOj: false}
+				];
+		}	
+
 		function clickBox(index) {  
-			if (gameCtrl.gameBoard[index].value === "empty" && stopsClickFunc === "") {
-				gameCtrl.gameBoard[index].value = firstClick;
+			if (gameCtrl.gameBoard[index].value === "empty" && gameCtrl.stopsClickFunc === false) {
+				gameCtrl.gameBoard[index].value = gameCtrl.firstClick;
 				if (gameCtrl.gameBoard[index].value === "x") {
 					gameCtrl.gameBoard[index].setBlue = true;
 					gameCtrl.gameBoard[index].setOj = false;
@@ -31,13 +39,11 @@ angular
 							gameCtrl.gameBoard[2].value=="x" && gameCtrl.gameBoard[5].value=="x" && gameCtrl.gameBoard[8].value=="x" ||
 							gameCtrl.gameBoard[0].value=="x" && gameCtrl.gameBoard[4].value=="x" && gameCtrl.gameBoard[8].value=="x" ||
 							gameCtrl.gameBoard[2].value=="x" && gameCtrl.gameBoard[4].value=="x" && gameCtrl.gameBoard[6].value=="x"
-							) 
-							{
+							){
 							gameCtrl.blueWin=true;
-							stopsClickFunc = "this ends clickBox function at end of game :P";
-							
+							gameCtrl.stopsClickFunc = "true";
+							gameCtrl.blueWinCounter ++;
 							}
-
 				} else {
 					gameCtrl.gameBoard[index].setBlue = false;
 					gameCtrl.gameBoard[index].setOj = true;
@@ -52,33 +58,38 @@ angular
 							gameCtrl.gameBoard[2].value=="o" && gameCtrl.gameBoard[4].value=="o" && gameCtrl.gameBoard[6].value=="o" 	
 							){
 							gameCtrl.ojWin=true;
-							stopsClickFunc = "dirty code ftw";
-							counter +=1;
+							gameCtrl.stopsClickFunc = "true";
+							gameCtrl.ojWinCounter ++;
 							} 
 				} 
-				firstClick = firstClick == "x" ? "o" : "x";					
-				console.log("assigned " + gameCtrl.gameBoard[index].value + " in square " + index);
-				console.log(gameCtrl.gameBoard[index]);									
-			} else {
-				
-			}
+
+				gameCtrl.firstClick = gameCtrl.firstClick == "x" ? "o" : "x";	
+				gameCtrl.drawCounter++;
+
+				if (gameCtrl.drawCounter >= 9){
+					gameCtrl.tie = true;
+				}
+
+			} else {}
 		}
 
+		function restartButton(){
+			gameCtrl.setNewGameboard();
+			gameCtrl.blueWin=false;
+			gameCtrl.ojWin=false;
+			gameCtrl.tie=false;
+			gameCtrl.firstClick= "x";
+			gameCtrl.stopsClickFunc = false;
+			gameCtrl.drawCounter = 0;
+		}
+
+		function buttonResetScore(){
+			gameCtrl.blueWinCounter = 0;
+			gameCtrl.ojWinCounter = 0;
+		}
 }
 
 
-// (gameCtrl.gameBoard[index].value !== "empty" && stopsClickFunc === "") 
-
-
-		// function restartButton(){
-		// 	gameCtrl.gameBoard = [
-		// 		{value:"empty",setBlue:false,setOj:false}, {value:"empty",setBlue:false, setOj:false}, {value:"empty",setBlue:false,setOj:false}, 
-		// 		{value:"empty",setBlue:false,setOj:false}, {value:"empty",  setBlue: false, setOj: false}, {value:"empty",  setBlue: false, setOj: false}, 
-		// 		{value:"empty",  setBlue: false, setOj: false}, {value:"empty",  setBlue: false, setOj: false}, {value:"empty",  setBlue: false, setOj: false}
-		// 		];
-		// 	gameCtrl.blueWin=false;
-		// 	gameCtrl.ojWin=false;
-		// }
 
 
 
