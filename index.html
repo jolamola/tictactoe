@@ -7,66 +7,47 @@
 	<script src="js/angular.js"></script>
 	<script src="js/app.js"></script>
 	<script src="js/controller.js"></script>
-	<!-- firebase.js --->
+	<script src="https://cdn.firebase.com/js/client/2.0.6/firebase.js"></script>
 	<!-- angularfire last -->
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 	<title>Tic | Tac | Toe</title>
 </head>
 
 <body ng-controller="GameController as gameCtrl">
+
 	<div class="container">
 		<div class="header">
 			<h6><span id="ticColor">tic</span> | <span id="tacColor">tac</span> | <span id="toeColor">toe</span></h6>
 		</div>
 		<div class="leftPanel">
 			<p>score:</p>
-			<input type = "button" class = "btnResetScore" value = "reset score" ng-click="gameCtrl.buttonResetScore()">
+			<input type="button" class="btnResetScore" value="reset score" ng-click="gameCtrl.buttonResetScore()">
 			<div class="blueCounterBox">
-				<p>{{gameCtrl.blueWinCounter}}</p>
+				<p ng-bind="gameCtrl.blueWinCounter"></p>
 			</div>
 			<div class="ojCounterBox">
-				<p>{{gameCtrl.ojWinCounter}}</p>
+				<p ng-bind="gameCtrl.ojWinCounter"></p>
 			</div>
 		</div>
 
 		<div class="board">
-			<div class="boxDefault shrink" ng-repeat="box in gameCtrl.gameBoard track by $index" ng-class="{blueBox: box.setBlue, ojBox: box.setOj}" ng-click="gameCtrl.clickBox($index)">
+			<div class="defaultBox shrink" ng-repeat="box in gameCtrl.gameBoard track by $index" 
+			ng-class="{blueBox: box.setBlue, ojBox: box.setOj}" ng-click="gameCtrl.clickBox($index)">
 			</div>
 		</div>
 
-
-
-
-
-
-
-		<div id="gameEndContainer" ng-show="gameCtrl.blueWin">
+		<div id="gameoverContainer" ng-show="gameCtrl.gameoverBox">
 			<div id="gameTextBox">
-				<p class="winMessage"><span style="color:#FF9900">Blue</span> Wins!</p>
-				<input type="button" class="btnEndGame hover rotate" value="-rematch-" ng-click="gameCtrl.restartButton()">
+				<p class="blueWinMsg" ng-bind="gameCtrl.blueWin"></p>
+				<p class="ojWinMsg" ng-bind="gameCtrl.ojWin"></p>
+				<p class="drawMsg" ng-bind="gameCtrl.drawMsg"></p>
+				<input type="button" class="btnRematchGame pulse-grow" value="-rematch-" ng-click="gameCtrl.rematchButton()">
+				<input type="button" class="btnNewGame pulse-grow" value="-new game-" ng-click="gameCtrl.newMatchButton()">
 			</div>
 		</div>
-
-
-		<div id="gameEndContainer" ng-show="gameCtrl.ojWin">
-			<div id="gameTextBox">
-				<p class="winMessage"><span style="color:#3399FF">Orange</span> Wins!</p>
-				<input type="button" class="btnEndGame hover rotate" value="-rematch-" ng-click="gameCtrl.restartButton()">
-			</div>
-		</div>
-	
-		<div id="gameEndContainer" ng-show="gameCtrl.tie">
-			<div id="gameTextBox">
-				<p class="winMessage">Draw Game!</p>
-				<input type="button" class="btnEndGame hover rotate" value="-rematch-" ng-click="gameCtrl.restartButton()">
-			</div>
-		</div>
-
-
-
-
 
 	</div>
+
 </body>
 
 </html>

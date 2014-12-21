@@ -7,17 +7,16 @@ Colors:
 #c9b597 - Lighter Brown
 #AE956D - Light Brown
 #806641 - Dark Brown (unused)
-#6E7587 - Light Green
-#55ebde - Dark Green
+#55ebde - Green
 ===============================*/
 
-h1{
-	color:white;
-}
 
-/*===============================
-Div header and tic tac toe text box
-===============================*/
+
+/*==================================
+
+	Div header and title text box
+
+===================================*/
 .header{
 	position:relative;
 	top: 20px;
@@ -50,10 +49,11 @@ h6{
 	font-weight: 600;
 }
 
-/*===============================
-Main body & container for game board
-and left panel.
-===============================*/
+/*==================================
+
+	Main body - gameboard & circles
+
+==================================*/
 body{
 	background-color: #020731;
 	background-position: center;
@@ -82,6 +82,41 @@ body{
 	top: 80px;
 }
 
+/*====================
+	Circles 
+=====================*/
+.defaultBox{
+	width: 175px;
+	height: 175px;
+	background-color: #6E7587;
+	float: left;
+	border-radius: 100px;
+	margin: 2px;
+}
+
+.blueBox{
+	width: 175px;
+	height: 175px;
+	background-color: #3399FF;
+	float: left;
+	border-radius: 100px;
+	margin: 2px;
+}
+
+.ojBox{
+	width: 175px;
+	height: 175px;
+	background-color: #FF9900;
+	float: left;
+	border-radius: 100px;
+	margin: 2px;
+}
+
+/*==================================
+
+	Left Panel (Score Counter)
+
+===================================*/
 .leftPanel{
 	color:#AE956D;
 	background-color:transparent;
@@ -91,7 +126,7 @@ body{
 	height: 300px;
 	position: relative;
 	top: 35px;
-	left: 0px;
+	left: 10px;
 	float: left;
 }
 
@@ -102,37 +137,109 @@ body{
 	font-weight: 400;
 	text-align: left;
 	margin: 0px;
-	margin-left: 5px;
+	display: block;
+	float: left;
+}
+
+.blueCounterBox {
+	width: 100px;
+	height: 100px;
+	background-color: #3399FF;
+	border-radius: 50px;
+	margin-top: 40px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	position: absolute;
+
+}
+
+.ojCounterBox {
+	width: 100px;
+	height: 100px;
+	background-color: #FF9900;
+	border-radius: 50px;
+	position: absolute;
+	margin-top: 40px;
+	margin-left: 115px;
+
+}
+
+.blueCounterBox p {
+	color: #020731;
+	font-size: 40px;
+	text-align: center;
+	position: relative;
+	top: 26px;
+	left: 38px;
+}
+
+.ojCounterBox p {
+	color: #020731;
+	font-size: 40px;
+	text-align: center;
+	position: relative;
+	top: 26px;
+	left: 38px;
+}
+
+/*====================
+	Reset Score Button 
+=====================*/
+.btnResetScore{
+	border-radius: 20px;
+	border: 0px;
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 600;
+	color: #020731;
+	font-size: 12px;
+	background: #AE956D;
+	padding: 5px 10px;
+	position: absolute;
+	margin-top: 8px;
+	margin-left: -54px;
+}
+
+.btnResetScore:hover {
+  background: #c9b597;
+  text-decoration: none;
+}
+
+.btnResetScore:focus {
+	outline:0;
 }
 
 
-/*================================================
-End of game message box
-=================================================*/
-#gameEndContainer{
+/*==================================
+
+	Gameover Box
+
+===================================*/
+#gameoverContainer{
 	background-color: transparent;
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 	position: absolute;
-	top: 124px;
-	height: 540px;
+	top: 100px;
+	height: 600px;
 }
 #gameTextBox{
 	background-color: white;
 	opacity: .9;
 	width: 100%;
 	margin-left: auto;
-	margin-right: auto;
+	margin-right: auto; 
 	position: absolute;
-	top: 125px;
+	top: 160px;
 	height: 300px;	
 }
-.winMessage{
+
+.blueWinMsg {
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 160px;
 	font-weight: 800;
-	color: #AE956D;
+	color: #3399FF;
 	text-align: center;
 	top: 0px;
 	left: 0px;
@@ -140,17 +247,34 @@ End of game message box
 	margin: 0px;
 }
 
-.ojWinMessage{
+.ojWinMsg {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 160px;
+	font-weight: 800;
+	color: #FF9900;
+	text-align: center;
+	top: 0px;
+	left: 0px;
 	position: relative;
-	top: 10px;
-	left: 10px;
+	margin: 0px;
 }
 
+.drawMsg {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 160px;
+	font-weight: 800;
+	color: #c9b597;
+	text-align: center;
+	top: 0px;
+	left: 0px;
+	position: relative;
+	margin: 0px;
+}
 
-/*========================
-Buttons
-=========================*/
-.btnEndGame {
+/*========================= 
+	Gameover Box buttons 
+==========================*/
+.btnRematchGame {
   border-radius: 25px;
   border: 0px;
   font-family: 'Ubuntu', sans-serif;
@@ -165,111 +289,33 @@ Buttons
   top:15px;
 }
 
-.btnEndGame:hover {
-  background: #83f7eb;
+.btnRematchGame:hover {
   text-decoration: none;
 }
 
-.btnEndGame:focus {
+.btnRematchGame:focus {
 	outline:0;
 }
 
-.btnResetScore{
-	border-radius: 20px;
-	border: 0px;
-	font-family: 'Ubuntu', sans-serif;
-	font-weight: 600;
-	color: #020731;
-	font-size: 12px;
-	background: #AE956D;
-	padding: 5px 10px;
-	position: absolute;
-	top:10px;
-	right:34px;
+.btnNewGame {
+  border-radius: 25px;
+  border: 0px;
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  font-size: 50px;
+  background: #55ebde;
+  padding: 10px 20px;
+  text-decoration: none;
+  position: relative;
+  margin-left: 40px;
+  top:15px;
 }
 
-.btnResetScore:hover {
-  background: #c9b597;
+.btnNewGame:hover {
   text-decoration: none;
 }
 
-.btnResetScore:focus {
+.btnNewGame:focus {
 	outline:0;
 }
 
-/*========================
-Boxes for game
-=========================*/
-.boxDefault{
-	width: 175px;
-	height: 175px;
-	background-color: #6E7587;
-	float: left;
-	border-radius: 100px;
-	margin: 2px;
-}
-
-/*==== player1 | blue box ====*/
-.blueBox{
-	width: 175px;
-	height: 175px;
-	background-color: #3399FF;
-	float: left;
-	border-radius: 100px;
-	margin: 2px;
-}
-
-/*==== player2 | oj box ====*/
-.ojBox{
-	width: 175px;
-	height: 175px;
-	background-color: #FF9900;
-	float: left;
-	border-radius: 100px;
-	margin: 2px;
-}
-
-/*========================
-Score counter
-=========================*/
-
-.blueCounterBox {
-	width: 100px;
-	height: 100px;
-	background-color: #3399FF;
-	border-radius: 50px;
-	margin-top: 10px;
-	margin-left: 20px;
-	float: left;
-}
-
-.ojCounterBox {
-	width: 100px;
-	height: 100px;
-	background-color: #FF9900;
-	border-radius: 50px;
-	margin-top: 10px;
-	margin-right: 20px;
-	float: right;
-	color: #020731;
-}
-
-.blueCounterBox p {
-	color: #020731;
-	font-size: 40px;
-	text-align: center;
-	position: relative;
-	margin-left: auto;
-	margin-right: auto;
-	top: 26px;
-}
-
-.ojCounterBox p {
-	color: #020731;
-	font-size: 40px;
-	text-align: center;
-	position: relative;
-	margin-left: auto;
-	margin-right: auto;
-	top: 26px;
-}

@@ -1,5 +1,0 @@
-// when playerX clicks (odd number) push square value to playerX array - chore | feature - change color of box to blue
-// when playerO clicks (even number) push square value to playerO array - chore | feature - change color of box to oj
-
-// push values into corresponding array. how to compare with win array?
-
