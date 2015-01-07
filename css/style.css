@@ -1,26 +1,56 @@
-/*===============================
-Colors:
-#6E7587 - Grey
-#FF9900 - Orange
-#3399FF - Light Blue
-#020731 - Dark Blue
-#c9b597 - Lighter Brown
-#AE956D - Light Brown
-#806641 - Dark Brown (unused)
-#55ebde - Green
-===============================*/
+/********************************************
+* Colors:				
+* #6E7587 - Grey
+* #FF9900 - Orange
+* #3399FF - Light Blue
+* #020731 - Dark Blue
+* #c9b597 - Lighter Brown
+* #AE956D - Light Brown
+* #806641 - Dark Brown (unused)
+* #55ebde - Green											*
+********************************************/
 
 
 
-/*==================================
+/********************************************							
+* Page Load buttons Play and Join game					
+********************************************/
 
-	Div header and title text box
+.btnPlay{
+  border-radius: 60px;
+  border: 0px;
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  font-size: 100px;
+  background: #AE956D;
+  padding: 0px 20px 10px 20px;
+  text-decoration: none;
+  position: relative;
+  top: 145px;
+  width: 530px;
+}
 
-===================================*/
+.btnPlay:hover {
+	background-color: #c9b597;
+}
+
+.btnPlay:focus{
+	outline: 0;
+}
+
+.btnJoinGame {
+	margin-top: 15px;
+
+}
+
+/********************************************							
+* Head and game title						
+********************************************/
 .header{
 	position:relative;
 	top: 20px;
 	width: 1200px;
+	height: 64px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -49,11 +79,10 @@ h6{
 	font-weight: 600;
 }
 
-/*==================================
 
-	Main body - gameboard & circles
-
-==================================*/
+/********************************************							
+* Gameboard					
+********************************************/
 body{
 	background-color: #020731;
 	background-position: center;
@@ -82,9 +111,9 @@ body{
 	top: 80px;
 }
 
-/*====================
-	Circles 
-=====================*/
+/********************************************							
+* Circles on gameboard						
+********************************************/
 .defaultBox{
 	width: 175px;
 	height: 175px;
@@ -112,11 +141,9 @@ body{
 	margin: 2px;
 }
 
-/*==================================
-
-	Left Panel (Score Counter)
-
-===================================*/
+/********************************************							
+* Score Counter (left panel)					
+********************************************/
 .leftPanel{
 	color:#AE956D;
 	background-color:transparent;
@@ -183,15 +210,15 @@ body{
 	left: 38px;
 }
 
-/*====================
-	Reset Score Button 
-=====================*/
+/********************************************							
+* Button to reset score counter						
+********************************************/
 .btnResetScore{
 	border-radius: 20px;
 	border: 0px;
 	font-family: 'Ubuntu', sans-serif;
 	font-weight: 600;
-	color: #020731;
+	color: white;
 	font-size: 12px;
 	background: #AE956D;
 	padding: 5px 10px;
@@ -210,11 +237,9 @@ body{
 }
 
 
-/*==================================
-
-	Gameover Box
-
-===================================*/
+/********************************************							
+* Box for game over and message					
+********************************************/
 #gameoverContainer{
 	background-color: transparent;
 	width: 100%;
@@ -235,7 +260,7 @@ body{
 	height: 300px;	
 }
 
-.blueWinMsg {
+.winMsg {
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 160px;
 	font-weight: 800;
@@ -247,34 +272,22 @@ body{
 	margin: 0px;
 }
 
-.ojWinMsg {
-	font-family: 'Ubuntu', sans-serif;
-	font-size: 160px;
-	font-weight: 800;
+.blue {
+	color: #3399FF;
+}
+
+.oj {
 	color: #FF9900;
-	text-align: center;
-	top: 0px;
-	left: 0px;
-	position: relative;
-	margin: 0px;
 }
 
-.drawMsg {
-	font-family: 'Ubuntu', sans-serif;
-	font-size: 160px;
-	font-weight: 800;
+.brown {
 	color: #c9b597;
-	text-align: center;
-	top: 0px;
-	left: 0px;
-	position: relative;
-	margin: 0px;
 }
 
-/*========================= 
-	Gameover Box buttons 
-==========================*/
-.btnRematchGame {
+/****************************************************							
+* Buttons in the game over box - restart and rematch						
+****************************************************/
+.btnGameOver {
   border-radius: 25px;
   border: 0px;
   font-family: 'Ubuntu', sans-serif;
@@ -284,38 +297,18 @@ body{
   padding: 10px 20px;
   text-decoration: none;
   position: relative;
-  margin-left: auto;
-  margin-right:auto;
   top:15px;
 }
 
-.btnRematchGame:hover {
+.btnGameOver:hover {
   text-decoration: none;
 }
 
-.btnRematchGame:focus {
+.btnGameOver:focus {
 	outline:0;
 }
 
 .btnNewGame {
-  border-radius: 25px;
-  border: 0px;
-  font-family: 'Ubuntu', sans-serif;
-  color: white;
-  font-size: 50px;
-  background: #55ebde;
-  padding: 10px 20px;
-  text-decoration: none;
-  position: relative;
   margin-left: 40px;
-  top:15px;
-}
-
-.btnNewGame:hover {
-  text-decoration: none;
-}
-
-.btnNewGame:focus {
-	outline:0;
 }
 
