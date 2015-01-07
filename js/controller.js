@@ -34,12 +34,16 @@ angular
 		gameCtrl.gameData = initGame();
 		var g = gameCtrl.gameData;
 
-		g.gameBoard = [
-			{value: "empty", setBlue: false, setOj: false}, {value: "empty", setBlue: false, setOj: false}, {value: "empty", setBlue: false, setOj: false}, 
-			{value: "empty", setBlue: false, setOj: false}, {value: "empty", setBlue: false, setOj: false}, {value: "empty", setBlue: false, setOj: false}, 
-			{value: "empty", setBlue: false, setOj: false}, {value: "empty", setBlue: false, setOj: false}, {value: "empty", setBlue: false, setOj: false}
-		];
-		g.$save();
+		function newGameBoard(){
+			g.gameBoard = [
+				{value: "empty", setBlue: false, setOj: false}, {value: "empty", setBlue: false, setOj: false}, {value: "empty", setBlue: false, setOj: false}, 
+				{value: "empty", setBlue: false, setOj: false}, {value: "empty", setBlue: false, setOj: false}, {value: "empty", setBlue: false, setOj: false}, 
+				{value: "empty", setBlue: false, setOj: false}, {value: "empty", setBlue: false, setOj: false}, {value: "empty", setBlue: false, setOj: false}
+			];
+			g.$save();
+		}
+
+		newGameBoard();
 
 		function winLogic(index) {  
 			if (g.gameBoard[index].value === "empty" && gameCtrl.stopsClickFunc === false) {
@@ -53,7 +57,8 @@ angular
 
 
 				// sets color to blue
-				if (g.gameBoard[index].value === "x") {
+				if (gameCtrl.firstClick === "x") {
+					g.gameBoard[index].value = "x";
 					g.gameBoard[index].setBlue = true;
 					g.gameBoard[index].setOj = false;
 					g.$save();
@@ -76,6 +81,7 @@ angular
 							g.$save();
 							}
 				} else {
+					g.gameBoard[index].value = "o";
 					g.gameBoard[index].setBlue = false;
 					g.gameBoard[index].setOj = true;
 					g.$save();
@@ -117,11 +123,7 @@ angular
 		********************************************/
 
 		function rematchButton(){
-			g.gameBoard = [
-				{value: "empty", setBlue: false, setOj: false}, {value: "empty", setBlue: false, setOj: false}, {value: "empty", setBlue: false, setOj: false}, 
-				{value: "empty", setBlue: false, setOj: false}, {value: "empty", setBlue: false, setOj: false}, {value: "empty", setBlue: false, setOj: false}, 
-				{value: "empty", setBlue: false, setOj: false}, {value: "empty", setBlue: false, setOj: false}, {value: "empty", setBlue: false, setOj: false}
-			];
+			newGameBoard();
 			gameCtrl.blueWin = "";
 			gameCtrl.ojWin = "";
 			gameCtrl.drawMsg = "";
